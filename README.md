@@ -23,12 +23,6 @@ La primera vez se crean las tablas `teams` y `characters` y se cargan los datos 
 
 (Se usa el puerto 5433 para no chocar con un PostgreSQL que ya tengan instalado.)
 
-## Ver los datos desde el navegador
-Abrir http://localhost:8080 (Adminer) e ingresar:
-- Sistema: PostgreSQL
-- Servidor: `postgres`
-- Usuario / contraseña / base: los de la tabla anterior
-
 ## Comandos útiles
 ```bash
 docker compose ps          # ver si está corriendo
