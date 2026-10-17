@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column,
     ManyToOne, JoinColumn, 
     CreateDateColumn, UpdateDateColumn } from 'typeorm';
-import { Team } from './teams.entity';
+import { Team } from '../teams/teams.entity';
 
 @Entity('characters')
 export class Character {
