@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { CharactersModule } from './characters/characters.module';
 
 @Module({
   imports: [
@@ -23,8 +24,10 @@ import { AppService } from './app.service';
         synchronize: false, // las tablas ya las crea init.sql
       }),
     }),
+    CharactersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
+
