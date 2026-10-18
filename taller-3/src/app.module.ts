@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CharactersModule } from './characters/characters.module';
+import { TeamsModule } from './teams/teams.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { CharactersModule } from './characters/characters.module';
       }),
     }),
     CharactersModule,
+    TeamsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
