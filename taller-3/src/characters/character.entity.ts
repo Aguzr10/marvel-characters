@@ -22,16 +22,16 @@ export class Character {
   id: number;
 
   @Column({ name: 'real_name' })
-  realName: string;
+  real_name: string;
 
   @Column({ unique: true })
   alias: string;
 
   @Column({ name: 'main_power' })
-  mainPower: string;
+  main_power: string;
 
   @Column({ name: 'power_level' })
-  powerLevel: number;
+  power_level: number;
 
   @Column({
     type: 'varchar',
@@ -41,15 +41,18 @@ export class Character {
   status: CharacterStatus;
 
   @Column({ name: 'is_villain', default: false })
-  isVillain: boolean;
+  is_villain: boolean;
 
-  @ManyToOne(() => Team, (team) => team.characters, { nullable: true })
+  @Column({ name: 'team_id', nullable: true })
+  team_id?: number | null;
+
+  @ManyToOne(() => Team, (team) => team.characters, { nullable: true, onDelete: 'RESTRICT' })
   @JoinColumn({ name: 'team_id' })
   team?: Team | null;
 
   @CreateDateColumn({ name: 'created_at' })
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn({ name: 'updated_at' })
-  updatedAt: Date;
+  updated_at: Date;
 }

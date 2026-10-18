@@ -9,7 +9,7 @@ import { CharactersModule } from './characters/characters.module';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: '../.env', // el .env está un nivel arriba de taller-3
+      envFilePath: '../.env', 
     }),
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
@@ -21,7 +21,7 @@ import { CharactersModule } from './characters/characters.module';
         password: config.get('DB_PASSWORD'),
         database: config.get('DB_NAME'),
         autoLoadEntities: true,
-        synchronize: false, // las tablas ya las crea init.sql
+        synchronize: false, 
       }),
     }),
     CharactersModule,
